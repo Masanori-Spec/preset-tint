@@ -1,0 +1,108 @@
+{
+  "product": "PresetTint",
+  "testedCommit": "23e0cece7a965afedead7a1e9a6fc88b43c35e43",
+  "browserNativeRun": "https://github.com/Masanori-Spec/preset-tint/actions/runs/37539834638",
+  "artifactId": 11447638378,
+  "artifactSHA256": "fedfdc3ea03266350e431fe0bf4c54c95a991a7fdafd22d75e908e1b643397d1",
+  "nativeOnlyRun": "https://github.com/Masanori-Spec/preset-tint/actions/runs/37539834631",
+  "nativeOnlyArtifactId": 11447573441,
+  "nativeOnlyArtifactSHA256": "90cefd6ef9a109bf115009a386fc5854e843ae23fc6af81cf3ca6d43ae6fc887",
+  "testedHTMLSHA256": "17f224036f28b79e7043afbf7ac99a4717714203f016c980b8560205a41e4e87",
+  "browserDownloadedJSONSHA256": "f3346dbf980dceb9e0e3c133c28356cbebffb04d6de9d73a584a8717e0343c00",
+  "coreTests": 39,
+  "browserCases": 31,
+  "officialConsumerActualVersion": "OpenSCAD version 2026.10.05",
+  "scope": "Official CLI import/CSG proof using original synthetic fixture only; no model schema or GUI authoring claim",
+  "evidenceCopies": [
+    {
+      "path": "docs/evidence/browser-report.json",
+      "artifactMember": "artifacts/browser/browser-report.json",
+      "bytes": 6409,
+      "sha256": "a6631d7176de30081815687114a6c3cc420073a325c58df2ab972b087ed8f3ae"
+    },
+    {
+      "path": "docs/evidence/browser-edited.json",
+      "artifactMember": "artifacts/browser/browser-edited.json",
+      "bytes": 526,
+      "sha256": "f3346dbf980dceb9e0e3c133c28356cbebffb04d6de9d73a584a8717e0343c00"
+    },
+    {
+      "path": "docs/evidence/browser-receipt.json",
+      "artifactMember": "artifacts/browser/browser-receipt.json",
+      "bytes": 2596,
+      "sha256": "25f3ebd1d5931ae08620f7ba85930ee70a5a6310413e6818273b0dea3db4ced8"
+    },
+    {
+      "path": "docs/evidence/native-report.json",
+      "artifactMember": "artifacts/native/native-report.json",
+      "bytes": 13124,
+      "sha256": "134aae933ed12e13c5e785029097d813684a0cd6585442c291da3adc152bf198"
+    },
+    {
+      "path": "docs/evidence/official-consumer-pin.json",
+      "artifactMember": "artifacts/native/official-consumer-pin.json",
+      "bytes": 681,
+      "sha256": "0ea9ff7f5082d1cf27b829e0fdc97fc22bdce940e9cce59a006ec196c84883f4"
+    },
+    {
+      "path": "docs/evidence/independent-presets-report.json",
+      "artifactMember": "artifacts/native/independent-presets-report.json",
+      "bytes": 481,
+      "sha256": "8dfd5e5924a722eb20369623a7fab3b66227160ada3903e417d01ec2bc8de790"
+    },
+    {
+      "path": "docs/evidence/edited.csg",
+      "artifactMember": "artifacts/native/edited.csg",
+      "bytes": 428,
+      "sha256": "fa949b7f98c27c3e387f7bcac31f58eb0d7705300cca6708616208b20470edc9"
+    },
+    {
+      "path": "docs/evidence/wrong-arity.csg",
+      "artifactMember": "artifacts/native/wrong-arity.csg",
+      "bytes": 434,
+      "sha256": "56aea03728c61d003060550ab49e0e44ea071497d30af2651667c862af56c510"
+    },
+    {
+      "path": "docs/evidence/json-array.csg",
+      "artifactMember": "artifacts/native/json-array.csg",
+      "bytes": 434,
+      "sha256": "56aea03728c61d003060550ab49e0e44ea071497d30af2651667c862af56c510"
+    },
+    {
+      "path": "docs/evidence/desktop-en.png",
+      "artifactMember": "artifacts/browser/03-en-edited-desktop.png",
+      "bytes": 272414,
+      "sha256": "383fde8a60af08cdcba64321be406a1e3c2909ea234d0be4a563abfed3393121"
+    },
+    {
+      "path": "docs/evidence/mobile-ja.png",
+      "artifactMember": "artifacts/browser/04-ja-mobile-390-quantization.png",
+      "bytes": 281970,
+      "sha256": "e1e1db5320dc2f504934e7c146683ce6a79bdd4deab0d0d98b058724d323347f"
+    },
+    {
+      "path": "docs/evidence/mobile-en.png",
+      "artifactMember": "artifacts/browser/04-en-mobile-320-quantization.png",
+      "bytes": 234548,
+      "sha256": "eb14b03298fb75740495d7b4046031e57ec6ffea540ff000ebbe11bfbe54f698"
+    },
+    {
+      "path": "docs/evidence/blocked-en.png",
+      "artifactMember": "artifacts/browser/05-en-blocked.png",
+      "bytes": 132320,
+      "sha256": "4e92e65abb0c1fee5e0fd57f6739fc4e2a939f1c3a0c410a81a93bc318330a66"
+    },
+    {
+      "path": "docs/evidence/review-ja.pdf",
+      "artifactMember": "artifacts/browser/review-ja.pdf",
+      "bytes": 216677,
+      "sha256": "3fe06db95a7ad40dd87e49bbce0083058fb1d1d73b1b4a92ffa0dfe3defab53e"
+    },
+    {
+      "path": "docs/evidence/review-en.pdf",
+      "artifactMember": "artifacts/browser/review-en.pdf",
+      "bytes": 50786,
+      "sha256": "d9752cf9d4815356910feaa965747bc2718d246d2323810331b2245765d21cce"
+    }
+  ]
+}

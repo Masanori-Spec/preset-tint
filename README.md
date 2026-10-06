@@ -1,8 +1,9 @@
 # PresetTint
 
 An offline editor of **existing OpenSCAD Customizer preset color values**.
-The official CLI feasibility gate has passed. The new standalone UI is a candidate
-awaiting its own actual browser-download → official CLI proof.
+Open the self-contained [PresetTint HTML](dist/preset-tint.html) locally to review
+and edit selected colors. Its actual browser-downloaded JSON has passed the
+official OpenSCAD 2026.10.05 snapshot CLI color and geometry checks.
 
 Select one existing preset and explicitly select existing keys. The bounded core
 edits six-digit RGB hex or normalized RGB/RGBA vector values while preserving
@@ -60,7 +61,7 @@ Original source and synthetic fixtures have no reuse license grant. Official
 vendor binaries are downloaded only into the hosted runner's temporary directory
 and are excluded from the public source and evidence payload.
 
-## Offline UI candidate
+## Offline tool
 
 Open `dist/preset-tint.html` locally. Choose existing JSON, explicitly select a
 preset and up to 32 existing color-shaped keys, then edit hex or normalized numeric
@@ -73,8 +74,11 @@ a key's meaning. The model's enums/ranges/default types still need to match the
 existing preset. Keep the original JSON safe and place/name the copy for its
 matching model. OpenSCAD normally reads a sidecar sharing the model's basename.
 
-Japanese/English, keyboard controls, 320/390px layouts, print review, stale async
-guards and clean offline reopening are covered by the hosted browser test plan.
-Those browser results remain pending until the browser-native workflow passes.
-That workflow uses the actual UI-downloaded JSON directly in the accepted six
-official CLI cases, rather than replacing it with the prototype editor output.
+The hosted browser gate passed 31 cases, including Japanese/English, keyboard
+controls, 320/390px horizontal review scrolling, print review, stale async guards,
+invalid-input blocks and clean offline reopening. It used the actual downloaded
+JSON directly in all six official CLI cases. All 39 core tests passed too.
+
+See the [verified release record](docs/release.md) for exact commits, artifacts,
+limits and retained screenshots. The CLI proof uses only the original synthetic
+fixture; it does not validate arbitrary model constraints or rendered images.

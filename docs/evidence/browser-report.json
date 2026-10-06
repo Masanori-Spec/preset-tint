@@ -1,0 +1,178 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "Offline Japanese start has no automatic selection or export",
+      "passed": true
+    },
+    {
+      "name": "Keyboard skip link and real file chooser preserve explicit preset selection",
+      "passed": true
+    },
+    {
+      "name": "Explicit key selection keeps keyboard focus and leaves geometry strings untouched",
+      "passed": true
+    },
+    {
+      "name": "Hex/RGB/RGBA controls preserve arity and display the exact half-alpha preview",
+      "passed": true
+    },
+    {
+      "name": "Actual keyboard download matches handwritten byte patch, string types, other preset and receipt hashes",
+      "passed": true,
+      "source": "actual sandboxed offline browser download",
+      "bytes": 526,
+      "sha256": "f3346dbf980dceb9e0e3c133c28356cbebffb04d6de9d73a584a8717e0343c00"
+    },
+    {
+      "name": "Language switch preserves numeric edits, selection and completed receipt",
+      "passed": true
+    },
+    {
+      "name": "Exact numeric review remains horizontally reachable: ja 390px",
+      "passed": true,
+      "left": 37,
+      "right": 353,
+      "cellLeft": 250.5,
+      "cellRight": 352.53125,
+      "position": 172
+    },
+    {
+      "name": "Exact numeric review remains horizontally reachable: ja 320px",
+      "passed": true,
+      "left": 27,
+      "right": 293,
+      "cellLeft": 190.5,
+      "cellRight": 292.53125,
+      "position": 222
+    },
+    {
+      "name": "Exact numeric review remains horizontally reachable: en 390px",
+      "passed": true,
+      "left": 37,
+      "right": 353,
+      "cellLeft": 207.546875,
+      "cellRight": 353.265625,
+      "position": 261
+    },
+    {
+      "name": "Exact numeric review remains horizontally reachable: en 320px",
+      "passed": true,
+      "left": 27,
+      "right": 293,
+      "cellLeft": 147.546875,
+      "cellRight": 293.265625,
+      "position": 311
+    },
+    {
+      "name": "JA/EN printed reviews contain preset identity and every edited encoded value",
+      "passed": true
+    },
+    {
+      "name": "Dispatched empty file change preserves a valid review",
+      "passed": true
+    },
+    {
+      "name": "Key filtering does not change hidden selections or invalidate a valid receipt",
+      "passed": true
+    },
+    {
+      "name": "Switching preset clears pending edits and restores that preset’s own values",
+      "passed": true
+    },
+    {
+      "name": "version input fails closed without stale export",
+      "passed": true
+    },
+    {
+      "name": "array input fails closed without stale export",
+      "passed": true
+    },
+    {
+      "name": "NFC input fails closed without stale export",
+      "passed": true
+    },
+    {
+      "name": "duplicate input fails closed without stale export",
+      "passed": true
+    },
+    {
+      "name": "malformed input fails closed without stale export",
+      "passed": true
+    },
+    {
+      "name": "SCAD is not an accepted input",
+      "passed": true
+    },
+    {
+      "name": "Oversized JSON blocked before parsing",
+      "passed": true
+    },
+    {
+      "name": "One invalid selected key blocks encoded After values without showing an old value under a new swatch",
+      "passed": true
+    },
+    {
+      "name": "Invalid channels/hex block export; native color input restores a valid edit",
+      "passed": true
+    },
+    {
+      "name": "Imported key names render as inert text",
+      "passed": true
+    },
+    {
+      "name": "UI selection is bounded to 32 keys without changing unselected values",
+      "passed": true
+    },
+    {
+      "name": "Selected but unchanged color retains its exact original encoded token",
+      "passed": true
+    },
+    {
+      "name": "Late file read cannot overwrite a newer sample",
+      "passed": true
+    },
+    {
+      "name": "Clear invalidates pending file reads",
+      "passed": true
+    },
+    {
+      "name": "Changing preset cancels pending hash/export without a stale download",
+      "passed": true
+    },
+    {
+      "name": "Repeated exports are byte deterministic",
+      "passed": true
+    },
+    {
+      "name": "Saved offline HTML starts clean without prior imported data or automatic selection",
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "networkRequests": [],
+  "screenshots": [
+    "01-ja-empty-desktop.png",
+    "02-ja-edited-desktop.png",
+    "03-en-edited-desktop.png",
+    "04-ja-mobile-390.png",
+    "04-ja-mobile-390-quantization.png",
+    "04-ja-mobile-320.png",
+    "04-ja-mobile-320-quantization.png",
+    "04-en-mobile-390.png",
+    "04-en-mobile-390-quantization.png",
+    "04-en-mobile-320.png",
+    "04-en-mobile-320-quantization.png",
+    "05-en-blocked.png"
+  ],
+  "browserVersion": "154.0.8037.57",
+  "chromiumSandboxRequested": true,
+  "chromiumMainProcessCommands": [
+    "/usr/bin/google-chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --user-data-dir=/tmp/playwright_chromiumdev_profile-yPamyX --remote-debugging-pipe --no-startup-window"
+  ],
+  "nativeInput": {
+    "source": "actual sandboxed offline browser download",
+    "bytes": 526,
+    "sha256": "f3346dbf980dceb9e0e3c133c28356cbebffb04d6de9d73a584a8717e0343c00"
+  }
+}

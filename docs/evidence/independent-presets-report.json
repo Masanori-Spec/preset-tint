@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "allNonselectedBytesUnchanged": true,
+  "selectedValues": {
+    "paint_hex": "#ff0000",
+    "paint_rgb": "[0, 1, 0]",
+    "paint_rgba": "[0, 0, 1, 0.5]"
+  },
+  "otherPresetAndGeometryValuesUnchanged": true,
+  "encodedStringTypesPreserved": true,
+  "negativeInputsOnlyChangeRGB": true,
+  "inputSHA256": "8325ebb2ace4b3c874c077bf348f9165d578c636bf1432b647541ceb1b32ecee",
+  "outputSHA256": "f3346dbf980dceb9e0e3c133c28356cbebffb04d6de9d73a584a8717e0343c00"
+}

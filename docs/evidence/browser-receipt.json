@@ -1,0 +1,130 @@
+{
+  "tool": "PresetTint",
+  "version": "0.1.0",
+  "formatVersion": "1",
+  "preset": "Palette",
+  "edits": [
+    {
+      "changed": true,
+      "preset": "Palette",
+      "key": "paint_hex",
+      "kind": "hex",
+      "arity": 3,
+      "before": "#000000",
+      "after": "#ff0000",
+      "requestedRGBA": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "encodedRGBA": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "quantizationRGBA": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "changed": true,
+      "preset": "Palette",
+      "key": "paint_rgb",
+      "kind": "rgb",
+      "arity": 3,
+      "before": "[0.25, 0.5, 0.75]",
+      "after": "[0, 1, 0]",
+      "requestedRGBA": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "encodedRGBA": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "quantizationRGBA": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "changed": true,
+      "preset": "Palette",
+      "key": "paint_rgba",
+      "kind": "rgba",
+      "arity": 4,
+      "before": "[0.5, 0.25, 0.75, 0.25]",
+      "after": "[0, 0, 1, 0.5]",
+      "requestedRGBA": [
+        0,
+        0,
+        1,
+        0.5
+      ],
+      "encodedRGBA": [
+        0,
+        0,
+        1,
+        0.5
+      ],
+      "quantizationRGBA": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "changedKeys": [
+    "paint_hex",
+    "paint_rgb",
+    "paint_rgba"
+  ],
+  "selectedKeys": [
+    "paint_hex",
+    "paint_rgb",
+    "paint_rgba"
+  ],
+  "preserved": "Every original byte outside selected value-string tokens; all other presets and parameters unchanged",
+  "modelValidation": "No SCAD is read or executed; model enums, ranges and default types are not validated",
+  "hexPolicy": "Six-digit RGB hex; each channel rounded to nearest 8-bit integer; alpha must remain1",
+  "patches": [
+    {
+      "key": "paint_rgba",
+      "startUTF16": 228,
+      "endUTF16": 253
+    },
+    {
+      "key": "paint_rgb",
+      "startUTF16": 187,
+      "endUTF16": 206
+    },
+    {
+      "key": "paint_hex",
+      "startUTF16": 157,
+      "endUTF16": 166
+    }
+  ],
+  "input": {
+    "name": "private-palette.json",
+    "bytes": 543,
+    "sha256": "8325ebb2ace4b3c874c077bf348f9165d578c636bf1432b647541ceb1b32ecee"
+  },
+  "output": {
+    "name": "private-palette.tinted.json",
+    "bytes": 526,
+    "sha256": "f3346dbf980dceb9e0e3c133c28356cbebffb04d6de9d73a584a8717e0343c00"
+  },
+  "scope": "Existing preset JSON only. No user SCAD loaded/executed. Model enums/ranges/default type compatibility not validated."
+}
