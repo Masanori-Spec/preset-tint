@@ -268,7 +268,7 @@ export function editPreset(bytes, presetName, changes) {
         "ALPHA_LOSS",
         "An existing RGB/hex value cannot carry alpha; its representation and arity must remain unchanged",
       );
-    const encoded =
+    let encoded =
       param.color.kind === "hex"
         ? "#" +
           rgba
@@ -292,7 +292,11 @@ export function editPreset(bytes, presetName, changes) {
       next.arity !== param.color.arity
     )
       fail("INTERNAL_ENCODING", "Output representation mismatch");
+    // An unchanged color must not normalize spelling, spacing or exponent notation.
+    if (next.rgba.every((channel, i) => channel === param.color.rgba[i]))
+      encoded = param.value;
     edits.push({
+      changed: encoded !== param.value,
       preset: presetName,
       key: change.key,
       kind: param.color.kind,

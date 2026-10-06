@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1];ART=ROOT/'artifacts/native';ART.mkdir(p
 def module(name,path):
  spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 oracle=module('native_oracle',ROOT/'scripts/native-oracle.py');presets=module('preset_oracle',ROOT/'scripts/verify-presets.py')
-REPORT={'status':'RUNNING','scope':'Official OpenSCAD CLI preset import into original synthetic fixture only; no GUI-authoring claim','cases':[]}
+REPORT={'status':'RUNNING','presetInputOrigin':'actual browser download'if os.environ.get('PRESET_TINT_BROWSER')=='1'else'core feasibility fixture','scope':'Official OpenSCAD CLI preset import into original synthetic fixture only; no GUI-authoring claim','cases':[]}
 def run(binary,name,preset_file,set_name):
  out=ART/f'{name}.csg';out.unlink(missing_ok=True)
  args=[str(binary),'-o',str(out),'-p',str(preset_file),'-P',set_name,str(ROOT/'test/fixtures/fixture.scad')]

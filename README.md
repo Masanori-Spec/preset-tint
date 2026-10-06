@@ -1,8 +1,8 @@
 # PresetTint
 
-Native-first feasibility for an offline editor of **existing OpenSCAD Customizer
-preset color values**. No product UI is present yet; the official CLI gate must
-pass first.
+An offline editor of **existing OpenSCAD Customizer preset color values**.
+The official CLI feasibility gate has passed. The new standalone UI is a candidate
+awaiting its own actual browser-download → official CLI proof.
 
 Select one existing preset and explicitly select existing keys. The bounded core
 edits six-digit RGB hex or normalized RGB/RGBA vector values while preserving
@@ -45,12 +45,13 @@ string. The checker requires the exact fallback RGB default and rejects it again
 the intended-color oracle. Exit 0 alone is never acceptance.
 
 This is official **CLI** compatibility proof, not a claim of GUI authoring or
-visual rendering. Native success is pending until the hosted run and actual
-artifacts are independently accepted.
+visual rendering. The [native feasibility run37459866371](https://github.com/Masanori-Spec/preset-tint/actions/runs/37459866371)
+and its actual artifacts were independently accepted. See
+[the native checkpoint](docs/native-feasibility.md).
 
 ```sh
 npm ci --ignore-scripts
-npm test
+npm run verify
 npm run prepare:native
 python3 scripts/verify-presets.py
 ```
@@ -58,3 +59,22 @@ python3 scripts/verify-presets.py
 Original source and synthetic fixtures have no reuse license grant. Official
 vendor binaries are downloaded only into the hosted runner's temporary directory
 and are excluded from the public source and evidence payload.
+
+## Offline UI candidate
+
+Open `dist/preset-tint.html` locally. Choose existing JSON, explicitly select a
+preset and up to 32 existing color-shaped keys, then edit hex or normalized numeric
+channels. Preview alpha against a checkerboard and inspect the exact quoted
+encoded strings before downloading a copy and hash receipt. Choosing a different
+preset clears pending edits. No preset or key is automatically selected.
+
+The tool does not load or execute SCAD. A shape resembling a color is not proof of
+a key's meaning. The model's enums/ranges/default types still need to match the
+existing preset. Keep the original JSON safe and place/name the copy for its
+matching model. OpenSCAD normally reads a sidecar sharing the model's basename.
+
+Japanese/English, keyboard controls, 320/390px layouts, print review, stale async
+guards and clean offline reopening are covered by the hosted browser test plan.
+Those browser results remain pending until the browser-native workflow passes.
+That workflow uses the actual UI-downloaded JSON directly in the accepted six
+official CLI cases, rather than replacing it with the prototype editor output.

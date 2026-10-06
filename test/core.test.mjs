@@ -223,3 +223,30 @@ test("normalized names in separate presets remain independent", () => {
     '{"fileFormatVersion":"1","parameterSets":{"A":{"é":"#000000"},"B":{"e\\u0301":"#ffffff"}}}';
   assert.equal(inspectPresets(enc(source)).presets.length, 2);
 });
+
+test("unchanged selected colors do not normalize existing spelling", () => {
+  const source = text
+    .replace('"#000000"', '"#aAbBcC"')
+    .replace('"[0.25, 0.5, 0.75]"', '"[2.5e-1,0.5,0.75]"');
+  assert.throws(
+    () =>
+      editPreset(enc(source), "Palette", [
+        { key: "paint_hex", rgba: [170 / 255, 187 / 255, 204 / 255, 1] },
+        { key: "paint_rgb", rgba: [0.25, 0.5, 0.75, 1] },
+      ]),
+    code("NO_CHANGES"),
+  );
+});
+test("mixed selection retains unchanged vector token bytes", () => {
+  const source = text.replace('"[0.25, 0.5, 0.75]"', '"[2.5e-1,0.5,0.75]"');
+  const r = editPreset(enc(source), "Palette", [
+    edits[0],
+    { key: "paint_rgb", rgba: [0.25, 0.5, 0.75, 1] },
+  ]);
+  assert.equal(
+    new TextDecoder().decode(r.output),
+    source.replace('"#000000"', '"#ff0000"'),
+  );
+  assert.deepEqual(r.receipt.changedKeys, ["paint_hex"]);
+  assert.equal(r.receipt.edits[1].changed, false);
+});
