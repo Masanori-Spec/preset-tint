@@ -1,0 +1,49 @@
+name: Offline browser JSON and official OpenSCAD CLI
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-openscad-cli:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install standard hosted CLI runtime dependencies
+        run: |
+          npm ci --ignore-scripts
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends xvfb xauth libegl1 libopengl0 libglu1-mesa libxcb-cursor0 libxkbcommon-x11-0 libfontconfig1 fonts-noto-cjk poppler-utils
+      - name: Test and build self-contained offline tool
+        run: npm run verify
+      - name: Sandboxed offline browser selection, actual download, mobile and stale-state proof
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+        run: |
+          npm run test:browser
+          node scripts/prepare-negatives.mjs
+          python scripts/verify-presets.py
+      - name: Verify exact official publisher checksum and AppImage bytes
+        run: python scripts/fetch-openscad.py
+      - name: Actual browser JSON in official CLI, with exact colors and fallback controls
+        env:
+          PRESET_TINT_BROWSER: "1"
+        run: xvfb-run --auto-servernum python scripts/native-gate.py
+      - name: Retain proof without official vendor binaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preset-tint-browser-native
+          path: |
+            artifacts/native/
+            artifacts/browser/
+            dist/preset-tint.html
+          if-no-files-found: error
