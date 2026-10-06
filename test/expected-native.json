@@ -1,0 +1,43 @@
+{
+  "selectedPreset": "Palette",
+  "selectedKeys": ["paint_hex", "paint_rgb", "paint_rgba"],
+  "encodedValues": {
+    "paint_hex": "#ff0000",
+    "paint_rgb": "[0, 1, 0]",
+    "paint_rgba": "[0, 0, 1, 0.5]"
+  },
+  "originalColors": [
+    [0, 0, 0, 1],
+    [0.25, 0.5, 0.75, 1],
+    [0.5, 0.25, 0.75, 0.25]
+  ],
+  "editedColors": [
+    [1, 0, 0, 1],
+    [0, 1, 0, 1],
+    [0, 0, 1, 0.5]
+  ],
+  "fallbackColors": [
+    [1, 0, 0, 1],
+    [0.2, 0.3, 0.4, 1],
+    [0, 0, 1, 0.5]
+  ],
+  "otherColors": [
+    [1, 1, 1, 1],
+    [1, 0, 1, 1],
+    [0, 1, 1, 0.75]
+  ],
+  "width": 7,
+  "position": [13, 0, 0],
+  "cubeSize": [7, 2, 1],
+  "translations": [
+    [1, 0, 0],
+    [13, 0, 0],
+    [26, 0, 0]
+  ],
+  "otherWidth": 11,
+  "otherTranslations": [
+    [1, 0, 0],
+    [17, 0, 0],
+    [34, 0, 0]
+  ]
+}

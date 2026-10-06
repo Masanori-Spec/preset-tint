@@ -1,0 +1,15 @@
+{
+  "name": "preset-tint",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "description": "Bounded offline OpenSCAD Customizer preset color value editor",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "prepare:native": "node scripts/prepare-native.mjs"
+  }
+}
