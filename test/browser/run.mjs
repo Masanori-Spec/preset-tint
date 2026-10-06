@@ -272,7 +272,12 @@ try {
   await expect(page.locator("#export")).toBeEnabled();
   check("Dispatched empty file change preserves a valid review");
   await page.locator("#search").fill("paint_rgb");
-  await expect(page.locator("#key-list input")).toHaveCount(1);
+  await expect(page.locator("#key-list input")).toHaveCount(2);
+  expect(
+    await page
+      .locator("#key-list input")
+      .evaluateAll((inputs) => inputs.map((input) => input.dataset.key)),
+  ).toEqual(["paint_rgb", "paint_rgba"]);
   await expect(page.locator("#editors .color-card")).toHaveCount(3);
   await expect(page.locator("#receipt")).toBeEnabled();
   await page.locator("#search").fill("");
