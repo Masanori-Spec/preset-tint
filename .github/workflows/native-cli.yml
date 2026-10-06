@@ -1,0 +1,40 @@
+name: Official OpenSCAD CLI preset color proof
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  openscad-cli:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install standard hosted CLI runtime dependencies
+        run: |
+          npm ci --ignore-scripts
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends xvfb xauth libegl1 libopengl0 libglu1-mesa libxcb-cursor0 libxkbcommon-x11-0 libfontconfig1
+      - name: Test bounded JSON editing and prepare only original fixtures
+        run: |
+          npm test
+          npm run prepare:native
+          python scripts/verify-presets.py
+      - name: Verify exact official publisher checksum and AppImage bytes
+        run: python scripts/fetch-openscad.py
+      - name: Official CLI CSG colors, echoes, geometry and silent fallback negatives
+        run: xvfb-run --auto-servernum python scripts/native-gate.py
+      - name: Retain proof without official vendor binaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preset-tint-native-cli
+          path: artifacts/native/
+          if-no-files-found: error
